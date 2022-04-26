@@ -1,4 +1,4 @@
-## Week 1 Cuestionary 
+## Week 1 Quiz
 
 ##Use the Week 1 Quiz Data Set to answer questions 11-20.
 
