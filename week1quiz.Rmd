@@ -1,0 +1,73 @@
+---
+title: "Coursera Data Science"
+author: "José Manuel Coca"
+date: '2022-04-27'
+output: html_document
+---
+
+# R-Programming
+## Week 1 Quiz
+
+### **11.** Use the [Week 1 Quiz Data Set](https://d396qusza40orc.cloudfront.net/rprog/data/quiz1_data.zip) to answer questions 11-20. In the dataset provided for this Quiz, what are the column names of the dataset? 
+
+```{r}
+hw1_data <- read.csv("C:/Users/Hola/coursera/tasks/course2/hw1_data.csv")
+```
+```{r}
+colnames(hw1_data)
+```
+
+### **12.** Extract the first 2 rows of the data frame and print them to the console. What does the output look like?
+
+```{r}
+head(hw1_data,2)
+```
+
+### **13.** How many observations (i.e. rows) are in this data frame?
+```{r}
+nrow(hw1_data)
+```
+Or using the "str" function
+```{r}
+str(hw1_data)
+```
+
+### **14.** Extract the last 2 rows of the data frame and print them to the console. What does the output look like?
+
+```{r}
+tail(hw1_data,2)
+```
+
+### **15.** What is the value of Ozone in the 47th row?
+```{r}
+hw1_data[47,"Ozone"]
+```
+
+### **16.** How many missing values are in the Ozone column of this data frame?
+```{r}
+sum(is.na(hw1_data$Ozone))
+```
+
+### **17.** What is the mean of the Ozone column in this dataset? Exclude missing values (coded as NA) from this calculation.
+```{r}
+mean(hw1_data$Ozone, na.rm=TRUE)
+```
+
+### **18.** Extract the subset of rows of the data frame where Ozone values are above 31 and Temp values are above 90. What is the mean of Solar.R in this subset?
+```{r}
+sub1<- subset(hw1_data,Ozone>31&Temp>90)
+mean(sub1$Solar.R)
+```
+
+### **19.** What is the mean of "Temp" when "Month" is equal to 6? 
+```{r}
+sub2<-subset(hw1_data,Month==6)
+mean(sub2$Temp)
+```
+
+### **20.** What was the maximum ozone value in the month of May (i.e. Month is equal to 5)?
+```{r}
+sub3<-subset(hw1_data,Month==5)
+max(sub3$Ozone, na.rm = TRUE)
+```
+
